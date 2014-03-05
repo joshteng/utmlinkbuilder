@@ -3,6 +3,7 @@
   <table class="table">
     <tr>
       <th>Campaign Name</th>
+      <th>Clicks</th>
       <th>Destination URL</th>
       <th>Campaign Medium</th>
       <th>Campaign Source</th>
@@ -17,6 +18,7 @@
     <% _.each(links, function(link) { %>
       <tr data-id="<%= link.id %>" data-model="link">
         <td><%= link.utmCampaign %></td>
+        <td><%= link.clicked %></td>
         <td><%= link.destinationUrl %></td>
         <td><%= link.utmMedium %></td>
         <td><%= link.utmSource %></td>

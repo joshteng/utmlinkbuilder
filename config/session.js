@@ -26,6 +26,8 @@ module.exports.session = {
   // on localhost is expected.
   // Read more about options at: https://github.com/visionmedia/connect-redis
   //
+
+  //uncomment this for develoment machine
   // host: 'localhost',
   // port: 6379,
   // // ttl: <redis session TTL in seconds>,
@@ -33,6 +35,8 @@ module.exports.session = {
   // // pass: <redis auth password>
   // prefix: 'sess:'
 
+
+  //uncomment this bit for production
   host: process.env.REDIS_ENDPOINT,
   port: 10490,
   // ttl: <redis session TTL in seconds>,
