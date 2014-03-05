@@ -24,6 +24,11 @@ module.exports = {
       type: 'string'
     },
 
+    admin: {
+      type: 'boolean',
+      defaultsTo: false
+    },
+
     toJson: function() {
       var obj = this.toObject();
       delete obj.password;
