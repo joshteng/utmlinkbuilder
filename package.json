@@ -1,8 +1,10 @@
 {
   "name": "UtmLinkBuilder",
-  "private": true,
-  "version": "0.10.15",
   "description": "Create and minify UTM links to track marketing campaigns",
+  "version": "0.0.1",
+  "engines": {
+    "node": "0.10.15"
+  },
   "dependencies": {
     "sails": "0.9.11",
     "grunt": "0.4.1",
