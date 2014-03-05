@@ -9,11 +9,67 @@
 module.exports = {
 
   attributes: {
-  	
-  	/* e.g.
-  	nickname: 'string'
-  	*/
-    
-  }
+  	utmSource:{
+      type: 'string',
+      required: true
+    },
+
+    utmMedium: {
+      type: 'string',
+      required: true
+    },
+
+    utmCampaign: {
+      type: 'string',
+      required: true
+    },
+
+    utmTerm: {
+      type: 'string'
+    },
+
+    utmContent: {
+      type: 'string'
+    },
+
+    destinationUrl: {
+      type: 'string',
+      url: true,
+      required: true
+    },
+
+    userId: {
+      type: 'string',
+      required: true
+    },
+
+    clicked: {
+      type: 'integer',
+      defaultsTo: 0
+    },
+
+    shortLink: function(){
+      return process.env.ROOT_URL + "/r/" + this.id
+    },
+
+    fullUrl: function(){
+      var others = ""
+
+      if (this.utmTerm){
+        others += "&utm_term=" + this.utmTerm
+      }
+
+      if (this.utmContent){
+        others += "&utm_content=" + this.utmContent
+      }
+
+      var url = this.destinationUrl + "/?" + "utm_campaign=" + this.utmCampaign + "&utm_medium=" + this.utmMedium + "&utm_source=" + this.utmSource + others
+
+
+      return url
+    }
+  },
+
+
 
 };

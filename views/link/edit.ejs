@@ -1,0 +1,62 @@
+<h3>Create a new link</h3>
+
+<form id="create-link-form" class="form-horizontal" action="/link/update/<%= link.id %>" method="POST">
+
+  <% if(flash && flash.err) { %>
+    <ul class="alert alert-success">
+      <% Object.keys(flash.err).forEach(function(error) { %>
+        <li><%- JSON.stringify(flash.err[error]) %></li>
+      <% }) %>
+    </ul>
+  <% } %>
+
+  <div class="control-group">
+    <label class="control-label">Destination URL</label>
+    <div class="controls">
+      <input name="destinationUrl" type="text" value="<%= link.destinationUrl %>"/>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Campaign Name</label>
+    <div class="controls">
+      <input name="utmCampaign" type="text" class="form-control" value="<%= link.utmCampaign %>"/>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Campaign Medium</label>
+    <div class="controls">
+      <input name="utmMedium" type="text" class="form-control" value="<%= link.utmMedium %>"/>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Campaign Source</label>
+    <div class="controls">
+      <input name="utmSource" type="text" value="<%= link.utmSource %>"/>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Campaign Term</label>
+    <div class="controls">
+      <input name="utmTerm" type="text" class="form-control" value="<%= link.utmTerm %>"/>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Content Location</label>
+    <div class="controls">
+      <input name="utmContent" type="text" class="form-control" value="<%= link.utmContent %>"/>
+    </div>
+  </div>
+
+  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+
+  <div class="control-group">
+    <div class="controls">
+      <input type="submit" value="Update" class="btn btn-lg btn-primary btn-block" />
+    </div>
+  </div>
+</form>

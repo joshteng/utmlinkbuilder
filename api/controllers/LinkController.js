@@ -16,15 +16,66 @@
  */
 
 module.exports = {
-    
-  
+  'new': function(req, res){
+    res.view();
+  },
 
+  create: function (req, res, next) {
+    Link.create(req.params.all(), function userCreated (err, link) {
+      if (err) {
+        req.session.flash = {
+          err: err
+        }
+        return res.redirect('/link/new');
+      }
+      res.redirect('/link');
+    })
+  },
 
-  /**
-   * Overrides for the settings in `config/controllers.js`
-   * (specific to LinkController)
-   */
+  edit: function(req, res, next) {
+    Link.findOne(req.param('id'), function foundUser (err, link){
+      if (err) return next(err);
+      if (!link) return next('Link doesn\'t exists.');
+
+      res.view({
+        link: link
+      });
+    });
+  },
+
+  update: function(req, res, next) {
+    Link.update(req.param('id'), req.params.all(), function linkUpdated (err, link){
+      if (err) {
+        req.session.flash = {
+          err: err
+        }
+        return res.redirect('/link/edit/' + req.param('id'));
+      }
+
+      res.redirect('/link');
+    });
+  },
+
+  destroy: function(req, res, next){
+    Link.findOne(req.param('id'), function foundUser (err, link){
+      if (err) return next(err);
+      if (!link) return next('link doesn\'t exists.');
+
+      Link.destroy(link.id, function userDestroyed(err){
+        if (err) return next(err);
+      });
+
+      res.redirect('/link');
+    })
+  },
+
+  index: function(req, res, next) {
+    Link.find(function foundUsers (err, links) {
+      if (err) return next(err);
+      res.view({
+        links: links
+      });
+    });
+  },
   _config: {}
-
-  
 };

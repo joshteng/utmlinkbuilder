@@ -1,0 +1,37 @@
+<div class="container">
+  <h3>Your Links</h3>
+  <table class="table">
+    <tr>
+      <th>Campaign Name</th>
+      <th>Destination URL</th>
+      <th>Campaign Medium</th>
+      <th>Campaign Source</th>
+      <th>Campaign Term</th>
+      <th>Content Location</th>
+      <th>Sharing Link</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% _.each(links, function(link) { %>
+      <tr data-id="<%= link.id %>" data-model="link">
+        <td><%= link.utmCampaign %></td>
+        <td><%= link.destinationUrl %></td>
+        <td><%= link.utmMedium %></td>
+        <td><%= link.utmSource %></td>
+        <td><%= link.utmTerm %></td>
+        <td><%= link.utmContent %></td>
+        <td><%= link.shortLink() %></td>
+        <td><a href="/link/edit/<%= link.id %>" class="btn btn-sm btn-warning">Edit</a></td>
+        <td>
+          <form action="/link/destroy/<%= link.id %>" method="POST">
+            <input type="hidden" value="delete" name="_method">
+            <input type="hidden" value="<%= _csrf %>" name="_csrf">
+            <input type="submit" class="btn btn-sm btn-danger" value="Delete">
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</div>

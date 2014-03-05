@@ -19,13 +19,19 @@ module.exports.policies = {
   '*': 'flash',
 
   user: {
-  	'new': 'flash',
-  	'create': 'flash',
+  	'new': false,//disable sign up
+  	'create': false,//disable sign up
   	'show': 'correctUser',
   	'edit': 'correctUser',
   	'update': 'correctUser',
   	'index': 'isAdmin',
   	'*': "isAuthenticated"
+  },
+
+  link: {
+    'new': ['flash', 'isAuthenticated'],
+    'edit': ['flash', 'isAuthenticated'],
+    '*': 'isAuthenticated'
   }
 
   /*
