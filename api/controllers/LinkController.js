@@ -70,7 +70,10 @@ module.exports = {
   },
 
   index: function(req, res, next) {
-    Link.find(function foundUsers (err, links) {
+    Link.find({
+      userId: req.session.User.id
+    },
+      function foundLinks (err, links) {
       if (err) return next(err);
       res.view({
         links: links

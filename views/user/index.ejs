@@ -1,10 +1,9 @@
 <div class="container">
-  <h3>Users</h3>
+  <h3>Users <a href="/user/new" class="btn btn-primary pull-right">Create a user</a></h3>
   <table class="table">
     <tr>
       <th>ID</th>
       <th>Email</th>
-      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -15,13 +14,6 @@
         <td><%= user.email %></td>
         <td><a href="/user/show/<%= user.id %>" class="btn btn-sm btn-primary">Show</a></td>
         <td><a href="/user/edit/<%= user.id %>" class="btn btn-sm btn-warning">Edit</a></td>
-        <td>
-          <form action="/user/destroy/<%= user.id %>" method="POST">
-            <input type="hidden" value="delete" name="_method">
-            <input type="hidden" value="<%= _csrf %>" name="_csrf">
-            <input type="submit" class="btn btn-sm btn-danger" value="Delete">
-          </form>
-        </td>
       </tr>
     <% }) %>
   </table>

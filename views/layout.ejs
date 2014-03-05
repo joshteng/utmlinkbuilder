@@ -30,12 +30,27 @@
       located in the top-level of this Sails app.  If you run into issues with styles
       not reloading, check the Sails log output in your console for LESS compilation errors.
       If necessary, shut down and then lift your app again.
-      
     -->
 
   </head>
 
   <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="/">UTM Link Builder</a>
+        <ul class="nav">
+          <% if (req.session.User) { %>
+            <li><a href="/link">Links</a></li>
+            <li><a href="/session/destroy">Log out</a></li>
+            <% if (req.session.User.admin) { %>
+              <li><a href="/user">Users</a></li>
+            <% } %>
+          <% } else { %>
+            <li><a href="/">Home</a></li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
 
     <!-- Include the view file for the current controller/route -->
     <%- body %>

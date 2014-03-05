@@ -15,12 +15,21 @@
 module.exports.policies = {
 
   // Default policy for all controllers and actions
-  // (`true` allows public access) 
+  // (`true` allows public access)
   '*': 'flash',
 
+  staticpages: {
+    'home': ['redirectIfAuthenticated', 'flash']
+  },
+
+  session: {
+    'new': ['redirectIfAuthenticated', 'flash'],
+    'create': ['redirectIfAuthenticated', 'flash']
+  },
+
   user: {
-  	'new': false,//disable sign up
-  	'create': false,//disable sign up
+  	'new': ['isAdmin', 'flash'],//disable sign up
+  	'create': "isAdmin",//disable sign up
   	'show': 'correctUser',
   	'edit': 'correctUser',
   	'update': 'correctUser',

@@ -30,11 +30,10 @@ module.exports = {
       }
 
       //login user
-      req.session.authenticated = true;
-      req.session.User = user;
+      // req.session.authenticated = true;
+      // req.session.User = user;
 
-      // res.json(user);
-      res.redirect('/user/show/' + user.id);
+      res.redirect('/user');
     })
   },
 
