@@ -18,14 +18,12 @@ To deploy
 
 To do
 -----
-1. add a session to person who clicked link
-2. keep track of unique clicks and not just total clicks
-3. generate unique link rather than use ID
-4. Beautify the app
-5. The links shown on index page is not specific to a user. It shows all the links available
-6. Protect from mass assignment (userId field for Link, admin field for User)!
-7. Write some test!
-more...
+1. generate unique link rather than use ID
+2. Beautify the app
+3. The links shown on index page is not specific to a user. It shows all the links available
+4. Protect from mass assignment (userId field for Link, admin field for User)!
+5. Write some test!
+6. more...
 
 
 Feature ideas
