@@ -2,7 +2,7 @@
   "name": "UtmLinkBuilder",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "Create and minify UTM links to track marketing campaigns",
   "dependencies": {
     "sails": "0.9.11",
     "grunt": "0.4.1",
