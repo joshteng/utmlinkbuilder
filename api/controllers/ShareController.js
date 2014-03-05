@@ -14,20 +14,38 @@
  *
  * @docs        :: http://sailsjs.org/#!documentation/controllers
  */
+var merge = require('merge');
 
 module.exports = {
-    redirect: function(req, res, next){
-      Link.findOne(req.param('id'), function foundUser (err, link){
-        if (err) return next(err);
-        if (!link) return next('Link doesn\'t exists.');
+  redirect: function(req, res, next){
+    Link.findOne(req.param('id'), function foundUser (err, link){
+      if (err) return next(err);
+      if (!link) return next('Link doesn\'t exists.');
 
-        Link.update(req.param('id'), { 'clicked': link.clicked+=1 }, function(){
-          console.log("success");
-        });
+      var unique
 
-        res.redirect("http://" + link.fullUrl()); //non-blocking
+      if (req.session.linksClicked) {
+        //clicked on some links before
+        if (req.session.linksClicked.indexOf(link.id) < 0){
+          //haven't clicked this particular link before
+          req.session.linksClicked.push(link.id);
+          unique = { 'uniqueClicks': link.uniqueClicks += 1 }
+        }
+      }else{
+        //have never clicked on any links before
+        req.session.linksClicked = [link.id] //create a new session to keep track of links clicked
+        unique = { 'uniqueClicks': link.uniqueClicks += 1 }
+      }
+
+      var attributes = merge({ 'totalClicks': link.totalClicks+=1 }, unique);
+
+      Link.update(req.param('id'), attributes, function(){
+        console.log("success");
       });
-    },
+
+      res.redirect("http://" + link.fullUrl()); //non-blocking
+    });
+  },
 
 
 

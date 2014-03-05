@@ -43,7 +43,12 @@ module.exports = {
       required: true
     },
 
-    clicked: {
+    uniqueClicks: {
+      type: 'integer',
+      defaultsTo: 0
+    },
+
+    totalClicks: {
       type: 'integer',
       defaultsTo: 0
     },

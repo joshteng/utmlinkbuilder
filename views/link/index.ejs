@@ -1,9 +1,10 @@
-<div class="container">
+<div class="container-fluid">
   <h3>Your Links</h3>
   <table class="table">
     <tr>
       <th>Campaign Name</th>
-      <th>Clicks</th>
+      <th>Unique Clicks</th>
+      <th>Total Clicks</th>
       <th>Destination URL</th>
       <th>Campaign Medium</th>
       <th>Campaign Source</th>
@@ -18,7 +19,8 @@
     <% _.each(links, function(link) { %>
       <tr data-id="<%= link.id %>" data-model="link">
         <td><%= link.utmCampaign %></td>
-        <td><%= link.clicked %></td>
+        <td><%= link.uniqueClicks %></td>
+        <td><%= link.totalClicks %></td>
         <td><%= link.destinationUrl %></td>
         <td><%= link.utmMedium %></td>
         <td><%= link.utmSource %></td>
