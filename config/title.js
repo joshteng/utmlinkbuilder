@@ -1,3 +1,3 @@
 module.exports = {
-  appName : 'Utm Link Builder'
+  appName : 'UTM Link Builder'
 }

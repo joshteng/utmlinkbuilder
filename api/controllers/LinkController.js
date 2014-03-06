@@ -76,7 +76,8 @@ module.exports = {
       function foundLinks (err, links) {
       if (err) return next(err);
       res.view({
-        links: links
+        links: links,
+        title: 'UTM Link Builder | Links'
       });
     });
   },
