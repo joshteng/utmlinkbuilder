@@ -1,5 +1,9 @@
 # UtmLinkBuilder
 ### a UTM link builder and shortener for your marketing needs
+1. Create links like this easily: `http://mywebsite.com/?utm_campaign=sunday-offer&utm_source=facebook&utm_medium=cpc`
+2. Shorten that long ugly UTM link for sharing `http://yoururlshortenerdomain/r/fwefubo443` *(buy a short domain to host this app)*
+3. Track performance of each link with total clicks and unique clicks
+
 Stack: node.js, sails.js, redis, mongoDB
 
 Default Configuration:
@@ -38,6 +42,6 @@ Feature ideas
 
 Help Needed! Fork!
 -----
-1. If you're a developer, please fork away, help me out with the todos and submit pull request!
-2. If you're a marketer, please give me ideas!
+1. If you're a developer, please fork away, help me out with the todos and submit pull request! Or do a code review, raise issues and leave comments. Thanks!
+2. If you're a marketer, you may leave ideas by raising issues.
 3. If you growth hack, this might be thoroughly useful, would really appreciate input, feedback and contribution!
