@@ -28,21 +28,21 @@ module.exports.session = {
   //
 
   //uncomment this for develoment machine
-  host: 'localhost',
-  port: 6379,
-  // ttl: <redis session TTL in seconds>,
-  db: 0,
-  // pass: <redis auth password>
-  prefix: 'sess:'
+  // host: 'localhost',
+  // port: 6379,
+  // // ttl: <redis session TTL in seconds>,
+  // db: 0,
+  // // pass: <redis auth password>
+  // prefix: 'sess:'
 
 
   //uncomment this bit for production
-  // host: process.env.REDIS_ENDPOINT,
-  // port: 10490,
-  // // ttl: <redis session TTL in seconds>,
-  // db: 0,
-  // pass: process.env.REDIS_PASSWORD,
-  // prefix: 'sess:'
+  host: process.env.REDIS_ENDPOINT,
+  port: 10490,
+  // ttl: <redis session TTL in seconds>,
+  db: 0,
+  pass: process.env.REDIS_PASSWORD,
+  prefix: 'sess:'
 
   // Uncomment the following lines to use your Mongo adapter as a session store
   // adapter: 'mongo',
