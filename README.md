@@ -20,14 +20,14 @@ To do
 -----
 1. generate unique link rather than use ID
 2. Protect from mass assignment (userId field for Link, admin field for User)!
-3. Write some test!
-4. more...
+3. Multi-user account. A user has many accounts. An account has many users. Follow Mailchimp's model.
+4. Write some test!
+5. more...
 
 
 Feature ideas
 -----
-1. allow multi user management of an account
-2. CPA information for each campaign (Pull data through API from google adwords and facebook ads)(action here is click through, but can add sophisticated JS SDK that can be embedded on the destination site for specific goal tracking such as making a purchase, download an ebook, sign up etc+)
+1. CPA information for each campaign (Pull data through API from google adwords and facebook ads)(action here is click through, but can add sophisticated JS SDK that can be embedded on the destination site for specific goal tracking such as making a purchase, download an ebook, sign up etc+)
 3. multi domain
 
 
