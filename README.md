@@ -11,7 +11,7 @@ Default Configuration:
 Session store: redis  
 Database: mongoDB
 
-To deploy
+To deploy (heroku)
 -----
 1. Sign up for MongoHQ and note your DB_URL with the right username and password
 2. Sign up for Redis (RedisToGo, etc+) and note your redis endpoint and password and port
