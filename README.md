@@ -31,7 +31,8 @@ To do
 2. Protect from mass assignment (userId field for Link, admin field for User)!
 3. Multi-user account. A user has many accounts. An account has many users. Follow Mailchimp's model. Links belong to accounts instead of users.
 4. Write some test!
-5. more...
+5. Improve on flash error message display
+6. more...
 
 
 Feature ideas
