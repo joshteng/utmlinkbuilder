@@ -29,7 +29,7 @@ To do
 -----
 1. Generate unique link rather than use database generated ID (allow for shorter, less scammy links)
 2. Protect from mass assignment (userId field for Link, admin field for User)!
-3. Multi-user account. A user has many accounts. An account has many users. Follow Mailchimp's model.
+3. Multi-user account. A user has many accounts. An account has many users. Follow Mailchimp's model. Links belong to accounts instead of users.
 4. Write some test!
 5. more...
 
