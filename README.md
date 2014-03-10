@@ -30,9 +30,10 @@ To do
 1. Generate unique link rather than use database generated ID (allow for shorter, less scammy links)
 2. Protect from mass assignment (userId field for Link, admin field for User)! (mashalling request parameters http://irlnathan.github.io/sailscasts/blog/2013/09/24/building-a-sails-application-ep17a-marshalling-request-parameters/)
 3. Multi-user account. A user has many accounts. An account has many users. Follow Mailchimp's model. Links belong to accounts instead of users.
-4. Write some test!
-5. Improve on flash error message display
-6. more...
+4. API - user, links, clicks
+5. Write some test!
+6. Improve on flash error message display
+7. more...
 
 
 Feature ideas
