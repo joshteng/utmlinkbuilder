@@ -5,6 +5,7 @@
  * @description :: A short summary of how this model works and what it represents.
  * @docs		:: http://sailsjs.org/#!documentation/models
  */
+var shortId = require('shortId')
 
 module.exports = {
 
@@ -75,6 +76,10 @@ module.exports = {
     }
   },
 
-
+  beforeCreate: function(values, next) {
+    var token = shortId.generate(); //should I somehow be prepared for uniqueness?
+    values.id = token;
+    next();
+  }
 
 };
