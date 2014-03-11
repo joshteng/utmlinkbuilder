@@ -5,7 +5,7 @@
  * @description :: A short summary of how this model works and what it represents.
  * @docs		:: http://sailsjs.org/#!documentation/models
  */
-var shortId = require('shortId')
+var shortId = require('shortid')
 
 module.exports = {
 
