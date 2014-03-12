@@ -27,7 +27,8 @@ module.exports = {
       utmCampaign: req.param('utmCampaign'),
       utmTerm: req.param('utmTerm'),
       destinationUrl: req.param('destinationUrl'),
-      utmContent: req.param('utmContent')
+      utmContent: req.param('utmContent'),
+      userId: req.session.User.id
     }
 
     Link.create(linkObj, function userCreated (err, link) {
