@@ -38,7 +38,7 @@ module.exports.session = {
 
   //uncomment this bit for production
   host: process.env.REDIS_ENDPOINT,
-  port: 10490,
+  port: process.env.REDIS_PORT,
   ttl: 31536000,
   db: 0,
   pass: process.env.REDIS_PASSWORD,

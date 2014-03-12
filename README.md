@@ -14,10 +14,10 @@ Database: mongoDB
 To deploy (heroku)
 -----
 1. Sign up for MongoHQ and note your DB_URL with the right username and password
-2. Sign up for Redis (RedisToGo, etc+) and note your redis endpoint and password and port
+2. Sign up for Redis (RedisToGo, RedisCloud, etc+) and note your redis endpoint and password and port
 1. Create a new heroku app `heroku create`
 2. Push `git push heroku master`
-3. Set environment variables: DB_URL, REDIS_ENDPOINT, REDIS_PASSWORD, ROOT_URL (your domain along with http:// or https:// for eg. `http://utm.io`)
+3. Set environment variables: DB_URL, REDIS_ENDPOINT, REDIS_PORT, REDIS_PASSWORD, ROOT_URL (your domain along with http:// or https:// for eg. `http://utm.io`)
 4. Enjoy! `heroku open`
 
 Details
