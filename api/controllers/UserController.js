@@ -21,7 +21,12 @@ module.exports = {
   },
 
   create: function (req, res, next) {
-    User.create(req.params.all(), function userCreated (err, user) {
+    var userObj = {
+      email: req.param('email'),
+      password: req.param('password')
+    }
+
+    User.create(userObj, function userCreated (err, user) {
       if (err) {
         req.session.flash = {
           err: err
@@ -59,7 +64,12 @@ module.exports = {
   },
 
   update: function(req, res, next) {
-    User.update(req.param('id'), req.params.all(), function userUpdated (err, user){
+    var userObj = {
+      email: req.param('email'),
+      password: req.param('password')
+    }
+
+    User.update(req.param('id'), userObj, function userUpdated (err, user){
       if (err) {
         return res.redirect('/user/edit/' + req.param('id'));
       }

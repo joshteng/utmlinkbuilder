@@ -21,7 +21,16 @@ module.exports = {
   },
 
   create: function (req, res, next) {
-    Link.create(req.params.all(), function userCreated (err, link) {
+    var linkObj = {
+      utmSource: req.param('utmSource'),
+      utmMedium: req.param('utmMedium'),
+      utmCampaign: req.param('utmCampaign'),
+      utmTerm: req.param('utmTerm'),
+      destinationUrl: req.param('destinationUrl'),
+      utmContent: req.param('utmContent')
+    }
+
+    Link.create(linkObj, function userCreated (err, link) {
       if (err) {
         req.session.flash = {
           err: err
@@ -44,7 +53,16 @@ module.exports = {
   },
 
   update: function(req, res, next) {
-    Link.update(req.param('id'), req.params.all(), function linkUpdated (err, link){
+    var linkObj = {
+      utmSource: req.param('utmSource'),
+      utmMedium: req.param('utmMedium'),
+      utmCampaign: req.param('utmCampaign'),
+      utmTerm: req.param('utmTerm'),
+      destinationUrl: req.param('destinationUrl'),
+      utmContent: req.param('utmContent')
+    }
+
+    Link.update(req.param('id'), linkObj, function linkUpdated (err, link){
       if (err) {
         req.session.flash = {
           err: err
